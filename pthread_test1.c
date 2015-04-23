@@ -11,7 +11,7 @@
 int thread_args[4] = { 0, 1, 2, 3 };  /* 쓰레드가 사용할 인자 */
 //-------------------------------------------------------------
 /* 쓰레드로 수행할 함수 */
-void* Thread( void *arg )
+void* TThread( void *arg )
 {
     int i;
     for ( i=0; i<30; i++ )
@@ -28,7 +28,7 @@ int main( void )
         // TODO: 스레드 생성하기
         pthread_create( &threads[i],                /* 쓰레드ID */
                         NULL,                       /* 쓰레드 속성 */
-                        ( void* (*)(void*) )Thread, /* 쓰레드 시작 함수 */
+                        ( void* (*)(void*) )TThread, /* 쓰레드 시작 함수 */
                         &thread_args[i] );          /* 생성된 쓰레드에 전달 인자 */
     
     pthread_exit(0); /*메인 쓰레드 종료 */
