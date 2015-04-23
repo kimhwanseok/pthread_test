@@ -17,12 +17,13 @@ void* MyThread( void *arg )
         printf( "thread %d: %dth iteration\n", *(int*)arg, i );
     pthread_exit(0);  /* 쓰레드 종료 함수 */
 }
+
 //-------------------------------------------------------------
 int main( void )
 {
     int i, clock_get;
     pthread_t threads[4]; /* 쓰레드 아이디를 위한 변수 */
-    
+    /*test code*/ 
     for ( i=0; i<4; i++ )  /* 쓰레드 생성 */
         // TODO: 스레드 생성하기
         pthread_create( &threads[i],                /* 쓰레드ID */
